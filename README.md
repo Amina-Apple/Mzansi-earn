@@ -1,43 +1,42 @@
 # Mzansi Earn 🇿🇦
 
-Mzansi Earn is a responsive prototype for a task marketplace where people can discover legitimate short tasks, review requirements, apply, complete work and track **demo** earnings.
+**Mzansi Earn** is a responsive task-marketplace prototype created by **Aamina Mongwe**. It demonstrates how a platform could help people discover short tasks, review requirements, record demo applications and track activity.
 
-## Features
-- Search available tasks
-- Filter by category
-- View task details
-- Demo application interaction
-- Earnings and activity dashboard
-- Responsive desktop and mobile interface
-- Safety reminder against task-fee scams
+## Prototype features
+- Responsive modern interface for desktop, tablet and mobile
+- Search and category filtering
+- Task detail modal with requirements and safety reminder
+- Demo application flow with live activity count
+- Demo employer-side "Post a task" form
+- Dashboard with activity cards and sample history
+- Safety centre focused on avoiding task-fee scams
+- GitHub Pages-ready static deployment
 
 ## Technology
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- GitHub Pages-ready static site
+HTML5 • CSS3 • Vanilla JavaScript • GitHub Pages
+
+## Important prototype limitation
+This is a **demo application**, not a live employment or payment platform. It does not process real money, create employment relationships, collect identity documents, or submit real applications.
+
+A production version would require appropriate legal/compliance review, age and worker protections, privacy and data security, payment controls, tax considerations, moderation, fraud prevention, accessibility, and clear terms for users and task owners.
+
+**Safety principle:** users should never be asked to pay money to access a task.
 
 ## Files
-- **index.html** — main app interface
-- **styles.css** — responsive styling
-- **app.js** — task data, search/filtering and demo interactions
-
-## Prototype status
-This repository contains a **demonstration prototype**. It does not process real money, collect identity documents, create real employment relationships, or submit real job applications.
-
-A production platform would require appropriate legal and compliance review, including age and worker protections, privacy, tax, payments, fraud prevention, moderation and consumer protection. Users should never be asked to pay money to access a task.
+- `index.html` — interface and sections
+- `styles.css` — responsive visual design
+- `app.js` — task data and interactive prototype behaviour
 
 ## Future development
-- Secure user accounts
-- Task-owner dashboard
-- Verified task owners
-- Moderation and reporting
-- Secure payment-provider integration
-- Application tracking
-- Notifications
-- Backend/database
-- Accessibility improvements
-- Audit and fraud-prevention systems
+1. Secure accounts and authentication
+2. Verified task-owner profiles
+3. Application status workflow
+4. Moderation and reporting
+5. Secure backend/database
+6. Notifications
+7. Accessibility and audit controls
+8. Carefully reviewed payment integration for an eligible production service
 
 **Project:** Mzansi Earn  
+**Creator:** Aamina Mongwe  
 **Year:** 2026
