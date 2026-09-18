@@ -1,83 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#176b45"><meta name="description" content="Mzansi Earn — skills, tasks and opportunities.">
+<link rel="manifest" href="manifest.json"><link rel="stylesheet" href="styles.css">
 <title>Mzansi Earn — Skills. Tasks. Opportunities.</title>
-<meta name="description" content="Mzansi Earn is a South African task marketplace prototype for discovering short tasks and tracking demo activity.">
-<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="topbar">
-  <a class="brand" href="#home" aria-label="Mzansi Earn home"><span class="logo">M</span><span><strong>Mzansi Earn</strong><small>Skills. Tasks. Opportunities.</small></span></a>
-  <nav aria-label="Main navigation">
-    <a href="#tasks">Tasks</a><a href="#dashboard">Dashboard</a><a href="#how">How it works</a>
-    <button class="btn primary" id="postTaskBtn">＋ Post a task</button>
-  </nav>
-  <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
+<a class="brand" href="#home"><span class="logo">M</span><span><strong>Mzansi Earn</strong><small>Skills. Tasks. Opportunities.</small></span></a>
+<nav><a href="#tasks">Tasks</a><a href="#dashboard">Dashboard</a><a href="#how">How it works</a><button class="btn ghost" id="profileBtn">Create profile</button><button class="btn primary" id="postTaskBtn">＋ Post a task</button></nav>
+<button class="menu" id="menuBtn">☰</button>
 </header>
-
 <main id="home">
-<section class="hero">
-  <div class="hero-copy">
-    <span class="pill">🇿🇦 SOUTH AFRICA • DEMO PROTOTYPE</span>
-    <h1>Turn your skills into <span>opportunities.</span></h1>
-    <p>Discover short, clearly described tasks, review requirements, and keep your activity organised in one simple workspace.</p>
-    <div class="hero-actions"><a class="btn primary" href="#tasks">Browse tasks</a><a class="btn ghost" href="#how">See how it works</a></div>
-    <div class="trust-row"><span>✓ Clear requirements</span><span>✓ Skill-based tasks</span><span>✓ Safety-focused</span></div>
-  </div>
-  <div class="hero-card">
-    <div class="card-label"><span>DEMO OVERVIEW</span><span class="live-dot">●</span></div>
-    <div class="balance">R 1,240<small>Demo earnings</small></div>
-    <div class="stats"><div><b id="completedStat">8</b><small>Completed</small></div><div><b id="progressStat">3</b><small>In progress</small></div><div><b id="availableStat">6</b><small>Available</small></div></div>
-    <div class="progress"><span style="width:72%"></span></div><small class="muted">72% weekly activity goal</small>
-  </div>
-</section>
+<section class="hero"><div class="hero-copy"><span class="pill">🇿🇦 SOUTH AFRICA • INSTALLABLE PWA</span><h1>Turn your skills into <span>opportunities.</span></h1><p>Discover short tasks, create your profile, and keep your activity organised in one simple workspace.</p><div class="hero-actions"><a class="btn primary" href="#tasks">Browse tasks</a><button class="btn ghost" id="installBtn" hidden>Install app</button></div><div class="trust-row"><span>✓ Profiles</span><span>✓ Skill-based tasks</span><span>✓ Safety-focused</span></div></div>
+<div class="hero-card"><div class="card-label"><span>YOUR PROFILE</span><span class="live-dot">●</span></div><div id="heroProfile"><div class="balance">Welcome<small>Create a profile to get started</small></div></div><div class="stats"><div><b id="completedStat">8</b><small>Completed</small></div><div><b id="progressStat">3</b><small>In progress</small></div><div><b id="availableStat">6</b><small>Available</small></div></div></div></section>
 
-<section id="tasks" class="section">
-  <div class="section-head">
-    <div><span class="eyebrow">DISCOVER</span><h2>Available tasks</h2><p>Sample opportunities for demonstrating the prototype.</p></div>
-    <div class="filters"><label><span class="sr-only">Search</span><input id="search" placeholder="Search tasks…" aria-label="Search tasks"></label><label><span class="sr-only">Category</span><select id="category" aria-label="Filter by category"><option value="all">All categories</option><option>Admin</option><option>Writing</option><option>Research</option><option>Design</option><option>Data</option></select></label></div>
-  </div>
-  <div id="taskGrid" class="grid"></div>
-</section>
+<section id="tasks" class="section"><div class="section-head"><div><span class="eyebrow">DISCOVER</span><h2>Available tasks</h2><p>Sample opportunities for demonstrating the platform.</p></div><div class="filters"><input id="search" placeholder="Search tasks…" aria-label="Search tasks"><select id="category"><option value="all">All categories</option><option>Admin</option><option>Writing</option><option>Research</option><option>Design</option><option>Data</option></select></div></div><div id="taskGrid" class="grid"></div></section>
 
-<section id="dashboard" class="section dashboard-section">
-  <div class="section-head"><div><span class="eyebrow">MY WORKSPACE</span><h2>Activity dashboard</h2><p>Track demo applications and completed work.</p></div><span class="demo-badge">Demo data only</span></div>
-  <div class="dashboard-grid">
-    <article class="dash-card"><span class="dash-icon">R</span><small>Demo balance</small><strong>R 1,240</strong><span class="muted">No real payments processed</span></article>
-    <article class="dash-card"><span class="dash-icon">✓</span><small>Completed tasks</small><strong id="dashCompleted">8</strong><span class="muted">Across sample projects</span></article>
-    <article class="dash-card"><span class="dash-icon">↗</span><small>Applications</small><strong id="dashApplications">0</strong><span class="muted">Recorded in this session</span></article>
-  </div>
-  <div class="activity-card"><div class="activity-head"><h3>Recent activity</h3><span>Prototype history</span></div><div id="activityList"></div></div>
-</section>
+<section id="dashboard" class="section"><div class="section-head"><div><span class="eyebrow">MY WORKSPACE</span><h2>Activity dashboard</h2><p id="profileSummary">Create a profile to personalise your workspace.</p></div><span class="demo-badge">Demo data</span></div><div class="dashboard-grid"><article class="dash-card"><span class="dash-icon">R</span><small>Demo balance</small><strong>R 1,240</strong><span class="muted">No real payments processed</span></article><article class="dash-card"><span class="dash-icon">✓</span><small>Completed tasks</small><strong>8</strong><span class="muted">Sample history</span></article><article class="dash-card"><span class="dash-icon">↗</span><small>Applications</small><strong id="dashApplications">0</strong><span class="muted">This session</span></article></div><div class="activity-card"><div class="activity-head"><h3>Recent activity</h3><span>Prototype history</span></div><div id="activityList"></div></div></section>
 
-<section id="how" class="section alt">
-  <span class="eyebrow">SIMPLE PROCESS</span><h2>How Mzansi Earn works</h2>
-  <div class="steps">
-    <div><span>01</span><h3>Find</h3><p>Search and filter tasks that match your skills and available time.</p></div>
-    <div><span>02</span><h3>Review</h3><p>Check the description, estimated time, category and safety information.</p></div>
-    <div><span>03</span><h3>Apply</h3><p>Use the prototype application flow to record interest in a task.</p></div>
-    <div><span>04</span><h3>Track</h3><p>Keep an eye on demo applications and activity from your dashboard.</p></div>
-  </div>
-</section>
-
-<section class="section safety">
-  <div><div><span class="eyebrow">SAFETY CENTRE</span><h2>Protect yourself from task scams</h2><p>Mzansi Earn never asks users to pay a fee to unlock a task in this prototype. Review task requirements and verify who is offering work before sharing information.</p></div><div class="safety-list"><span>✓ Never pay to access a task</span><span>✓ Avoid sharing unnecessary personal information</span><span>✓ Report suspicious task descriptions</span></div></div>
-</section>
+<section id="how" class="section alt"><span class="eyebrow">SIMPLE PROCESS</span><h2>How Mzansi Earn works</h2><div class="steps"><div><span>01</span><h3>Create profile</h3><p>Add your name, skills and short bio.</p></div><div><span>02</span><h3>Find</h3><p>Search tasks that match your skills and time.</p></div><div><span>03</span><h3>Apply</h3><p>Review requirements and record your interest.</p></div><div><span>04</span><h3>Track</h3><p>Follow applications and activity from your dashboard.</p></div></div></section>
+<section class="section safety"><div><div><span class="eyebrow">SAFETY CENTRE</span><h2>Protect yourself from task scams</h2><p>Never pay a fee to unlock a task. Verify task owners and avoid sharing unnecessary personal information.</p></div><div class="safety-list"><span>✓ Never pay to access a task</span><span>✓ Keep sensitive information private</span><span>✓ Report suspicious task descriptions</span></div></div></section>
 </main>
+<footer><div><strong>Mzansi Earn</strong><p>Task marketplace concept • Prototype by Aamina Mongwe</p></div><p>© 2026 • Demo only</p></footer>
 
-<footer><div><strong>Mzansi Earn</strong><p>Task marketplace concept • Prototype by Aamina Mongwe</p></div><div><a href="#tasks">Tasks</a><a href="#dashboard">Dashboard</a><a href="#how">How it works</a></div><p>© 2026 • Demo only</p></footer>
-
-<div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="modal-box"><button class="close" id="close" aria-label="Close">×</button><span class="eyebrow">TASK DETAILS</span><h2 id="modalTitle"></h2><p id="modalDesc"></p><div class="modal-meta" id="modalMeta"></div><div class="requirements"><b>Before applying</b><span>Review the requirements and never pay a fee to access work.</span></div><button class="btn primary full" id="apply">Apply in demo</button><p class="small">Demo action only — no real application, employment relationship or payment is created.</p></div>
-</div>
-
-<div id="postModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="postTitle">
-  <div class="modal-box"><button class="close" id="postClose" aria-label="Close">×</button><span class="eyebrow">TASK POSTING</span><h2 id="postTitle">Post a task</h2><p>Create a sample task to demonstrate the employer-side concept.</p>
-  <form id="postForm"><label>Task title<input required name="title" placeholder="e.g. Website content review"></label><label>Category<select name="cat"><option>Admin</option><option>Writing</option><option>Research</option><option>Design</option><option>Data</option></select></label><label>Demo reward<input required name="pay" placeholder="e.g. R200"></label><label>Description<textarea required name="desc" rows="4" placeholder="Describe the task clearly…"></textarea></label><button class="btn primary full">Add to prototype</button></form></div>
-</div>
-<div id="toast" class="toast" role="status" aria-live="polite"></div>
-<script src="app.js"></script>
-</body>
-</html>
+<div id="profileModal" class="modal hidden"><div class="modal-box"><button class="close" data-close="profileModal">×</button><span class="eyebrow">YOUR PROFILE</span><h2>Create your profile</h2><p>Your profile is stored only in this browser in this prototype.</p><form id="profileForm"><label>Full name<input required name="name" autocomplete="name"></label><label>Email<input required type="email" name="email" autocomplete="email"></label><label>Skills<input required name="skills" placeholder="e.g. Writing, Admin, Design"></label><label>Short bio<textarea required name="bio" rows="3" placeholder="Tell task owners briefly about your skills"></textarea></label><button class="btn primary full">Save profile</button></form><button class="btn ghost full danger" id="clearProfile">Clear saved profile</button></div></div>
+<div id="modal" class="modal hidden"><div class="modal-box"><button class="close" id="close">×</button><span class="eyebrow">TASK DETAILS</span><h2 id="modalTitle"></h2><p id="modalDesc"></p><div class="modal-meta" id="modalMeta"></div><div class="requirements"><b>Before applying</b><span>Review requirements and never pay a fee to access work.</span></div><button class="btn primary full" id="apply">Apply in demo</button><p class="small">Demo action only — no real application or payment is created.</p></div></div>
+<div id="postModal" class="modal hidden"><div class="modal-box"><button class="close" id="postClose">×</button><span class="eyebrow">TASK POSTING</span><h2>Post a task</h2><p>Create a sample task for the prototype.</p><form id="postForm"><label>Task title<input required name="title"></label><label>Category<select name="cat"><option>Admin</option><option>Writing</option><option>Research</option><option>Design</option><option>Data</option></select></label><label>Demo reward<input required name="pay" placeholder="e.g. R200"></label><label>Description<textarea required name="desc" rows="4"></textarea></label><button class="btn primary full">Add to prototype</button></form></div></div>
+<div id="toast" class="toast" role="status"></div>
+<script src="app.js"></script><script>if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');</script>
+</body></html>
